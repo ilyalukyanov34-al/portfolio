@@ -1,0 +1,28 @@
+@mixin text-style($size, $weight, $color) {
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+  text-decoration: none;
+}
+
+$orange: #ff7a00;
+$grey: #b3b3b3;
+
+// Шаблоны для адаптива (брейкпоинты)
+@mixin tablet {
+  @media screen and (max-width: 768px) {
+    @content; // сюда Sass подставит измененные стили
+  }
+}
+
+@mixin mobile {
+  @media screen and (max-width: 480px) {
+    @content; // а сюда стили для самых маленьких экранов
+  }
+}
+
+@mixin xs-mobile {
+  @media screen and (max-width: 360px) {
+    @content;
+  }
+}
