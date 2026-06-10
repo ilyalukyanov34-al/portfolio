@@ -1,7 +1,14 @@
+// import { defineConfig } from "vite";
+// import react from "@vitejs/react-refresh";
+// export default defineConfig({
+//   plugins: [react()],
+//   base: "/portfolio/",
+// });
+
 import { defineConfig } from "vite";
-import react from "@vitejs/react-refresh"; // или @vitejs/plugin-react в зависимости от твоей версии
-// https://vite.dev/config/
+import react from "@vitejs/plugin-react";
+
 export default defineConfig({
   plugins: [react()],
-  base: "/portfolio/", // 👈 ОБЯЗАТЕЛЬНО ДОБАВЬ ЭТУ СТРОКУ (слэши с двух сторон важны!)
+  base: "/portfolio/",
 });
