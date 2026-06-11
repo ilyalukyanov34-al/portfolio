@@ -7,10 +7,12 @@
 
 $orange: #ff7a00;
 $grey: #b3b3b3;
+$white: #ffffff;
+
 
 // Шаблоны для адаптива (брейкпоинты)
 @mixin tablet {
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 900px) {
     @content; // сюда Sass подставит измененные стили
   }
 }
