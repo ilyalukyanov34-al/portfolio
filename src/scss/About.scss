@@ -107,6 +107,18 @@
   // адаптация для "About"
   // =================================================
 
+  @media screen and (max-width: 1050px) {
+    &__right {
+      &-photo {
+        width: 430px;
+      }
+      &::before {
+        width: 340px;
+        height: 340px;
+      }
+    }
+  }
+
   @media screen and (max-width: 940px) {
     &__left {
       &-lastName {
@@ -127,11 +139,22 @@
     &__right {
       margin-right: 0;
       &-photo {
-        width: 400px;
+        width: 340px;
       }
       &::before {
         width: 320px;
         height: 320px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 765px) {
+    &__left {
+      &-lastName {
+        font-size: 64px;
+      }
+      &-name {
+        font-size: 64px;
       }
     }
   }
@@ -146,10 +169,10 @@
         margin-bottom: 10px;
       }
       &-lastName {
-        font-size: 55px;
+        font-size: 48px;
       }
       &-name {
-        font-size: 55px;
+        font-size: 48px;
       }
       &-work {
         font-size: 14px;
@@ -213,11 +236,11 @@
     &__right {
       margin-top: 0;
       &-photo {
-        width: 280px;
+        width: 260px;
       }
       &::before {
-        width: 240px;
-        height: 240px;
+        width: 210px;
+        height: 210px;
       }
     }
   }
@@ -251,11 +274,11 @@
 
     &__right {
       &-photo {
-        width: 280px;
+        width: 250px;
       }
       &::before {
-        width: 220px;
-        height: 220px;
+        width: 208px;
+        height: 208px;
       }
     }
   }
@@ -291,11 +314,23 @@
 
     &__right {
       &-photo {
-        width: 240px;
+        width: 230px;
       }
       &::before {
-        width: 190px;
-        height: 190px;
+        width: 180px;
+        height: 180px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 520px) {
+    &__right {
+      &-photo {
+        width: 218px;
+      }
+      &::before {
+        width: 170px;
+        height: 170px;
       }
     }
   }
@@ -426,6 +461,30 @@
       &-job {
         font-size: 18px;
         margin-top: 15px;
+      }
+    }
+  }
+  @media screen and (max-width: 360px) {
+    &__right {
+      margin-top: 1px;
+      &-photo {
+        width: 260px;
+      }
+      &::before {
+        width: 220px;
+        height: 220px;
+      }
+    }
+  }
+  @media screen and (max-width: 330px) {
+    &__right {
+      margin-top: 1px;
+      &-photo {
+        width: 250px;
+      }
+      &::before {
+        width: 210px;
+        height: 210px;
       }
     }
   }

@@ -1,0 +1,45 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06B6D4"></stop>
+      <stop offset="100%" stop-color="#8B5CF6"></stop>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="512" height="512" rx="96" fill="#0F172A"></rect>
+
+  <!-- HTML-like brackets -->
+  <path d="M130 180 L70 256 L130 332" fill="none" stroke="url(#g)" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"></path>
+
+  <path d="M382 180 L442 256 L382 332" fill="none" stroke="url(#g)" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"></path>
+
+  <!-- OOP object -->
+  <rect x="176" y="146" width="160" height="220" rx="24" fill="#1E293B" stroke="url(#g)" stroke-width="10"></rect>
+
+  <!-- Class header -->
+  <rect x="176" y="146" width="160" height="56" rx="24" fill="url(#g)"></rect>
+
+  <!-- Text -->
+  <text x="256" y="184" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="white">
+    OOP
+  </text>
+
+  <!-- Class members -->
+  <line x1="205" y1="245" x2="307" y2="245" stroke="#94A3B8" stroke-width="8" stroke-linecap="round"></line>
+
+  <line x1="205" y1="285" x2="287" y2="285" stroke="#94A3B8" stroke-width="8" stroke-linecap="round"></line>
+
+  <line x1="205" y1="325" x2="297" y2="325" stroke="#94A3B8" stroke-width="8" stroke-linecap="round"></line>
+
+  <!-- Connection nodes -->
+  <circle cx="256" cy="108" r="22" fill="url(#g)"></circle>
+  <line x1="256" y1="130" x2="256" y2="146" stroke="url(#g)" stroke-width="8"></line>
+
+  <circle cx="150" cy="404" r="16" fill="#06B6D4"></circle>
+  <circle cx="362" cy="404" r="16" fill="#8B5CF6"></circle>
+
+  <line x1="176" y1="366" x2="150" y2="404" stroke="#06B6D4" stroke-width="6"></line>
+
+  <line x1="336" y1="366" x2="362" y2="404" stroke="#8B5CF6" stroke-width="6"></line>
+</svg>

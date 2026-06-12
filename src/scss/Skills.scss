@@ -1,0 +1,186 @@
+@use "./Mixin.scss" as *;
+
+.skills {
+  display: flex;
+  flex-direction: column;
+  background: #1e1e1e;
+  border-radius: 12px;
+  padding: 30px;
+  margin-top: 20px;
+  position: relative;
+  z-index: 2;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 -15px 30px rgba(0, 0, 0, 0.5);
+
+  &__title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+
+    &-circle {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 2px solid $orange;
+      background: transparent;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: $orange;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+  }
+
+  &__card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: #2a2a2a;
+    border-radius: 10px;
+    padding: 15px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: transform 0.3s;
+    cursor: pointer;
+    &:hover {
+      transform: translateY(-7px);
+    }
+  }
+  &__card-img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+  }
+  &__card-name {
+    @include text-style(16px, 500, $white);
+  }
+
+  @media screen and (max-width: 880px) {
+    .skills {
+      &__card {
+        padding: 12px 15px;
+        gap: 10px;
+      }
+      &__card-img {
+        width: 40px;
+        height: 40px;
+      }
+      &__card-name {
+        font-size: 14px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 770px) {
+    .skills {
+      &__list {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      &__card {
+        padding: 10px 12px;
+        gap: 8px;
+      }
+      &__card-img {
+        width: 35px;
+        height: 35px;
+      }
+      &__card-name {
+        font-size: 13px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 610px) {
+    .skills {
+      &__card {
+        padding: 8px 10px;
+        gap: 6px;
+      }
+      &__card-img {
+        width: 30px;
+        height: 30px;
+      }
+      &__card-name {
+        font-size: 12px;
+      }
+      &__title-text {
+        font-size: 20px;
+      }
+    }
+  }
+  @media screen and (max-width: 550px) {
+    .skills {
+      &__title-text {
+        font-size: 18px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    .skills {
+      &__card {
+        padding: 8px 10px;
+        gap: 6px;
+        display: flex;
+        justify-content: center;
+      }
+      &__card-img {
+        width: 30px;
+        height: 30px;
+      }
+      &__card-name {
+        font-size: 11px;
+      }
+      &__title-text {
+        font-size: 17px;
+      }
+      &__list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        margin-top: 20px;
+      }
+    }
+  }
+  @media screen and (max-width: 350px) {
+    .skills {
+      &__card {
+        padding: 8px 8px;
+        gap: 5px;
+        display: flex;
+        justify-content: center;
+      }
+      &__card-img {
+        width: 28px;
+        height: 28px;
+      }
+      &__card-name {
+        font-size: 10px;
+      }
+      &__title-text {
+        font-size: 17px;
+      }
+      &__list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 11px;
+        margin-top: 20px;
+      }
+    }   
+  }
+}
