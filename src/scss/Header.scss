@@ -155,7 +155,7 @@
     right: 12px; /* ← прижато к правому краю */
     left: auto; /* ← убираем растяжение на всю ширину */
     width: auto; /* ← ширина по контенту */
-    min-width: 125px;
+    // min-width: 125px;
 
     flex-direction: column;
     align-items: center;
@@ -185,8 +185,38 @@
   }
 }
 
+@media (max-width: 450px) {
+  .header__links {
+    min-width: 110px;
+    gap: 10px;
+
+    &--open {
+      padding: 14px;
+    }
+  }
+
+  .header__link {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 430px) {
+  .header__links {
+    min-width: 100px;
+    gap: 10px;
+
+    &--open {
+      padding: 14px;
+    }
+  }
+
+  .header__link {
+    font-size: 13px;
+  }
+}
 @media screen and (max-width: 400px) {
   .header__links {
+    min-width: 80px;
     gap: 8px;
   }
   .header__link,
@@ -203,7 +233,9 @@
     font-size: 22px;
   }
   .header__links {
-    gap: 8px;
+    min-width: 20px;
+
+    gap: 6px;
   }
   .header__link,
   .header__lang-btn {
