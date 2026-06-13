@@ -4,6 +4,7 @@ import About from "./components/About";
 import Skills from "./components/Skills";
 import Info from "./components/Info";
 import "./App.scss";
+import Projects from "./components/Projects";
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
       <About />
       <Info />
       <Skills />
+      <Projects />
     </div>
   );
 };

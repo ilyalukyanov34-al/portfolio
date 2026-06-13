@@ -20,13 +20,12 @@
   &__link-logo {
     @include text-style(28px, 700, $orange);
     font-family: sans-serif;
+    flex: 1;
   }
 
   &__links {
     display: flex;
     gap: 20px;
-    margin-left: 20px;
-    margin-right: auto;
   }
 
   &__link {
@@ -40,6 +39,8 @@
   }
 
   &__actions {
+    flex: 1; // занимает правую часть
+    justify-content: flex-end;
     display: flex;
     align-items: center;
     gap: 17px;
