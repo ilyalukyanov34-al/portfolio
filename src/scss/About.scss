@@ -64,7 +64,7 @@
     }
 
     &-btn {
-      @include text-style(20px, 200, $orange);
+      @include text-style(18px, 200, $orange);
       display: inline-block;
       margin-bottom: 15px;
       border: 1px solid $orange;
@@ -87,6 +87,7 @@
     &-contacts {
       display: flex;
       gap: 30px;
+
 
       a {
         &:hover img {

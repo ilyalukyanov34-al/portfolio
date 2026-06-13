@@ -17,6 +17,7 @@
     align-items: center;
     gap: 10px;
     margin-bottom: 8px;
+    @include text-style(18px, 100, $grey);
 
     &-circle {
       width: 20px;
@@ -181,6 +182,6 @@
         gap: 11px;
         margin-top: 20px;
       }
-    }   
+    }
   }
 }
