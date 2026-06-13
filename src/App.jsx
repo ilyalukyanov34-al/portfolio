@@ -10,8 +10,8 @@ const App = () => {
     <div className="container">
       <Header />
       <About />
-      <Skills />
       <Info />
+      <Skills />
     </div>
   );
 };
