@@ -37,10 +37,10 @@ const Projects = () => {
       <div className="projects__header">
         <div className="projects__title">
           <div className="projects__title-circle"></div>
-          <h2 className="projects__title-text">Избранные проекты</h2>
+          <h2 className="projects__title-text">Проекты</h2>
         </div>
         <a href="#" className="projects__see-all">
-          Смотреть все →
+          Смотреть дальше →
         </a>
       </div>
 
