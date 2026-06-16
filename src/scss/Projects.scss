@@ -46,7 +46,19 @@
     }
   }
 
+  // &__see-all {
+  //   @include text-style(14px, 400, $orange);
+  //   text-decoration: none;
+  //   transition: 0.3s;
+  //   &:hover {
+  //     opacity: 0.7;
+  //   }
+  // }
+
   &__see-all {
+    background: none; // Сбрасываем фон кнопки
+    border: none; // Сбрасываем рамку
+    cursor: pointer; // Возвращаем указатель мыши
     @include text-style(14px, 400, $orange);
     text-decoration: none;
     transition: 0.3s;
@@ -55,10 +67,50 @@
     }
   }
 
+  &__controls {
+    display: flex;
+    align-items: center;
+  }
+
+  &__nav-group {
+    display: flex;
+    gap: 15px;
+  }
+
+  &__nav-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    @include text-style(14px, 400, $white);
+
+    transition:
+      color 0.2s ease-in-out,
+      transform 0.1s ease-in-out;
+
+    &:hover:not(:disabled) {
+      color: $orange;
+      transform: scale(0.95);
+    }
+
+    &:active:not(:disabled) {
+      color: $orange;
+      opacity: 1;
+      transform: scale(0.95); // Эффект физического клика
+    }
+
+    &:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+      color: $grey;
+    }
+  }
+
   &__list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+    animation: fadeIn 0.4s ease-in-out;
   }
 
   &__card {
@@ -120,12 +172,28 @@
     }
   }
 
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(
+        10px
+      ); // Карточки еще и мягко приподнимутся на 10 пикселей
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
   // =================================================
   // адаптация для "Projects"
   // =================================================
 
   @media screen and (max-width: 610px) {
     &__see-all {
+      font-size: 13px;
+    }
+    &__nav-btn {
       font-size: 13px;
     }
   }
@@ -149,6 +217,9 @@
     &__see-all {
       font-size: 11px;
     }
+    &__nav-btn {
+      font-size: 11px;
+    }
     &__card-title {
       @include text-style(15px, 600, $white);
     }
@@ -169,35 +240,11 @@
     &__see-all {
       font-size: 10px;
     }
+    &__nav-btn {
+      font-size: 10px;
+    }
   }
   @media screen and (max-width: (390px)) {
-    // &__card {
-    //   display: flex;
-    //   flex-direction: column;
-    //   align-items: center;
-    //   justify-content: center;
-    // }
-    // &__card-links {
-    //   display: flex;
-    //   flex-direction: column;
-    // }
-    // &__card-github {
-    //   @include text-style(12px, 400, $orange);
-    //   padding: 0;
-    //   margin-bottom: 10px;
-    //   display: flex;
-    //   justify-content: center;
-    //   align-items: center;
-    // }
-    // &__card-live {
-    //   @include text-style(12px, 400, $grey);
-    //   padding: 0;
-    //   margin-bottom: 10px;
-    //   display: flex;
-    //   justify-content: center;
-    //   align-items: center;
-    // }
-
     &__list {
       display: grid;
       grid-template-columns: repeat(1, 1fr);
