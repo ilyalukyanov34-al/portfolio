@@ -1,6 +1,4 @@
-
-
-// 2. от ИИ
+import { useTranslation } from "react-i18next";
 
 import React, { useState } from "react";
 import "../scss/Projects.scss";
@@ -61,6 +59,7 @@ const projects = [
 ];
 
 const Projects = () => {
+  const { t } = useTranslation();
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 3;
 
@@ -85,12 +84,11 @@ const Projects = () => {
 
   return (
     <section className="projects" id="projects">
-
       <div className="projects__header">
         {/* Статическая левая часть: круг и заголовок */}
         <div className="projects__title">
           <div className="projects__title-circle"></div>
-          <h2 className="projects__title-text">Проекты</h2>
+          <h2 className="projects__title-text">{t("projects")} </h2>
         </div>
 
         {/* Динамическая правая часть с кнопками */}
@@ -101,7 +99,7 @@ const Projects = () => {
               className="projects__see-all"
               onClick={() => setCurrentPage(2)} // Меняем страницу на 2
             >
-              Смотреть дальше →
+              {t("see_more")}
             </button>
           ) : (
             /* 2. Иначе (если страница вторая), рендерим группу из двух кнопок */
@@ -110,14 +108,14 @@ const Projects = () => {
                 className="projects__nav-btn"
                 onClick={() => setCurrentPage(currentPage - 1)} // Вычитаем 1, чтобы вернуться назад
               >
-                ← Назад
+                {t("back")}  
               </button>
               <button
                 className="projects__nav-btn"
                 disabled={currentPage === totalPages} // Кнопка станет неактивной, если это конец
                 onClick={() => setCurrentPage(currentPage + 1)} // Прибавляем 1 для движения вперед
               >
-                Вперед →
+                {t("forward")}
               </button>
             </div>
           )}

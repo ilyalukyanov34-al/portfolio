@@ -5,6 +5,7 @@ import insta from "../assets/insta.svg";
 import telegram from "../assets/telegram.svg";
 import email from "../assets/email.svg";
 import location from "../assets/location.svg";
+import { useTranslation } from "react-i18next";
 
 const contactLinks = [
   {
@@ -43,6 +44,7 @@ const socialLinks = [
 ];
 
 const Contacts = () => {
+  const { t } = useTranslation();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -109,7 +111,7 @@ const Contacts = () => {
         <div className="contact__header">
           <div className="contact__title">
             <div className="contact__title-circle"></div>
-            <h2 className="contact__title-text">Контакты</h2>
+            <h2 className="contact__title-text">{t("contacts")}</h2>
           </div>
         </div>
 
@@ -118,14 +120,14 @@ const Contacts = () => {
             <div className="contact__input-group">
               <input
                 type="text"
-                placeholder="Ваше имя"
+                placeholder={t("your_name")}
                 className="contact__input"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               />
               {status === "errorName" && (
                 <p className="contact__status contact__status--error">
-                  Имя должно быть не менее 2 символов
+                  {t("error_name")}
                 </p>
               )}
             </div>
@@ -133,28 +135,28 @@ const Contacts = () => {
             <div className="contact__input-group">
               <input
                 type="text"
-                placeholder="Ваш Telegram (@username)"
+                placeholder={t("your_telegram")}
                 className="contact__input"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
               {status === "errorTelegram" && (
                 <p className="contact__status contact__status--error">
-                  Введи Telegram в формате @username
+                  {t("error_telegram")}
                 </p>
               )}
             </div>
 
             <div className="contact__input-group">
               <textarea
-                placeholder="Сообщение"
+                placeholder={t("message")}
                 className="contact__textarea"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
               ></textarea>
               {status === "errorMessage" && (
                 <p className="contact__status contact__status--error">
-                  Сообщение должно быть не менее 10 символов
+                  {t("error_message")}
                 </p>
               )}
             </div>
@@ -164,18 +166,18 @@ const Contacts = () => {
               className="contact__btn"
               disabled={status === "sending"}
             >
-              {status === "sending" ? "Отправка..." : "Отправить сообщение"}
+              {status === "sending" ? t("sending") : t("send_message")}
               <span className="contact__btn-arrow"> →</span>
             </button>
 
             {status === "success" && (
               <p className="contact__status contact__status--success">
-                 отправлено! ✅
+                {t("success")}
               </p>
             )}
             {status === "error" && (
               <p className="contact__status contact__status--error">
-                 попробуйте ещё раз ❌
+                {t("error")}
               </p>
             )}
           </form>
@@ -203,7 +205,7 @@ const Contacts = () => {
               ))}
             </div>
 
-            <h3 className="contact__subtitle">Социальные сети</h3>
+            <h3 className="contact__subtitle">{t("social")}</h3>
 
             <div className="contact__social-list">
               {socialLinks.map((social) => (
