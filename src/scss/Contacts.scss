@@ -166,7 +166,7 @@
         color: $orange;
       }
       .contact__icon img {
-        filter: invert(48%) sepia(90%) saturate(800%) hue-rotate(1deg);
+        filter: invert(75%) sepia(0%) saturate(0%) brightness(90%);
       }
     }
   }
@@ -179,7 +179,7 @@
     width: 22px;
     height: 22px;
     img {
-      filter: invert(1); // делает чёрную иконку белой
+      filter: invert(75%) sepia(0%) saturate(0%) brightness(90%);
       transition: filter 0.2s ease;
       color: $grey;
     }
@@ -217,7 +217,7 @@
       width: 17px;
       height: 17px;
       img {
-        filter: invert(1); // делает чёрную иконку белой
+        filter: invert(75%) sepia(0%) saturate(0%) brightness(90%);
         transition: filter 0.2s ease;
         width: 26px;
         height: 26px;
@@ -240,7 +240,7 @@
       width: 17px;
       height: 17px;
       img {
-        filter: invert(1);
+        filter: invert(75%) sepia(0%) saturate(0%) brightness(90%);
         transition: filter 0.2s ease;
         width: 26px;
         height: 26px;
@@ -269,7 +269,7 @@
       width: 17px;
       height: 17px;
       img {
-        filter: invert(1); // делает чёрную иконку белой
+        filter: invert(75%) sepia(0%) saturate(0%) brightness(90%);
         transition: filter 0.2s ease;
         width: 23px;
         height: 23px;
@@ -280,6 +280,7 @@
       font-size: 11px;
     }
   }
+
   @media screen and (max-width: 550px) {
     &__text {
       @include text-style(10px, 500, $grey);
@@ -350,8 +351,19 @@
         height: 21px;
       }
     }
-    &__card{
+    &__card {
       padding: 30px;
+      gap: 20px;
+    }
+  }
+  @media screen and (max-width: 400px) {
+    &__header {
+      margin-top: 15px;
+      margin-bottom: 30px;
+    }
+    padding: 15px;
+    &__card {
+      padding: 25px;
       gap: 20px;
     }
   }
