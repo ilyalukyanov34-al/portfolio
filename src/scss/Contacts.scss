@@ -345,7 +345,7 @@
       width: 17px;
       height: 17px;
       img {
-        filter: invert(1); // делает чёрную иконку белой
+        filter: invert(75%) sepia(0%) saturate(0%) brightness(90%);
         transition: filter 0.2s ease;
         width: 21px;
         height: 21px;
@@ -357,6 +357,9 @@
     }
   }
   @media screen and (max-width: 400px) {
+    &__container {
+      padding: 0;
+    }
     &__header {
       margin-top: 15px;
       margin-bottom: 30px;

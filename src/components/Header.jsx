@@ -29,7 +29,7 @@ const Header = () => {
 
       <div className={`header__links ${isOpen ? "header__links--open" : ""}`}>
         <a
-          href="#about"
+          href="#info"
           className="header__link"
           onClick={() => setIsOpen(false)}
         >
@@ -50,7 +50,7 @@ const Header = () => {
           {t("projects")}
         </a>
         <a
-          href="#contacts"
+          href="#contact"
           className="header__link"
           onClick={() => setIsOpen(false)}
         >
