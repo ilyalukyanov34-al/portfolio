@@ -1,0 +1,72 @@
+@use "./Mixin.scss" as *;
+
+.footer {
+  position: relative;
+  width: 100%;
+  margin-top: 23px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 23px 30px;
+  background: #1e1e1e;
+  border-radius: 12px;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.5),
+    0 2px 8px rgba(255, 255, 255, 0.02);
+
+  &__logo {
+    @include text-style(28px, 700, $orange);
+    font-family: sans-serif;
+    flex: 1;
+  }
+  &__text {
+    font-size: 14px;
+    color: $grey;
+  }
+
+  @media screen and (max-width: 768px) {
+    .footer {
+      padding: 12px 20px;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .footer__text {
+      font-size: 13px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .footer {
+      padding: 10px 12px;
+    }
+    &__logo {
+      font-size: 26px;
+    }
+      .footer__text {
+      font-size: 12px;
+    }
+  }
+  @media screen and (max-width: 380px) {
+  .footer {
+    padding: 8px 10px;
+  }
+   &__logo {
+      font-size: 22px;
+    }
+}
+  @media screen and (max-width: 360px) {
+   .footer__text {
+      font-size: 11px;
+    }
+}
+  @media screen and (max-width: 330px) {
+   .footer__text {
+      font-size: 10px;
+    }
+    &__logo {
+      font-size: 18px;
+    }
+}
+}
