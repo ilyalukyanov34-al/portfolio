@@ -41,19 +41,7 @@
         transform: translate(-50%, -50%);
       }
     }
-
-    // &-text {
-    // }
   }
-
-  // &__see-all {
-  //   @include text-style(14px, 400, $orange);
-  //   text-decoration: none;
-  //   transition: 0.3s;
-  //   &:hover {
-  //     opacity: 0.7;
-  //   }
-  // }
 
   &__see-all {
     background: none; // Сбрасываем фон кнопки

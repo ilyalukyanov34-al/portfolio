@@ -108,7 +108,7 @@ const Projects = () => {
                 className="projects__nav-btn"
                 onClick={() => setCurrentPage(currentPage - 1)} // Вычитаем 1, чтобы вернуться назад
               >
-                {t("back")}  
+                {t("back")}
               </button>
               <button
                 className="projects__nav-btn"

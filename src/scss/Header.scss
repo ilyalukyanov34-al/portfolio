@@ -33,7 +33,7 @@
     text-decoration: none;
     transition: 0.3s;
 
-    &:hover {
+    @include hover-media {
       color: $orange;
     }
   }
@@ -55,7 +55,7 @@
     cursor: pointer;
     transition: 0.3s;
 
-    &:hover {
+    @include hover-media {
       color: $orange;
     }
   }
@@ -69,9 +69,11 @@
     align-items: center;
     transition: 0.3s;
 
-    &:hover &__img {
-      filter: invert(56%) sepia(85%) saturate(1914%) hue-rotate(1deg)
-        brightness(103%) contrast(106%);
+    @include hover-media {
+      .header__change-background__img {
+        filter: invert(56%) sepia(85%) saturate(1914%) hue-rotate(1deg)
+          brightness(103%) contrast(106%);
+      }
     }
 
     &__img {
@@ -240,7 +242,7 @@
   .header__link,
   .header__lang-btn {
     font-size: 12px;
-  } 
+  }
   .header__change-background__img {
     width: 20px;
     height: 20px;

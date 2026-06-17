@@ -9,7 +9,6 @@ $orange: #ff7a00;
 $grey: #b3b3b3;
 $white: #ffffff;
 
-
 // Шаблоны для адаптива (брейкпоинты)
 @mixin tablet {
   @media screen and (max-width: 900px) {
@@ -26,5 +25,18 @@ $white: #ffffff;
 @mixin xs-mobile {
   @media screen and (max-width: 360px) {
     @content;
+  }
+}
+
+@mixin hover-media {
+  @media (hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+  @media (hover: none) {
+    &:active {
+      @content;
+    }
   }
 }

@@ -113,7 +113,7 @@
       opacity 0.3s ease,
       transform 0.1s ease;
 
-    &:hover {
+    @include hover-media {
       opacity: 0.9;
       color: $grey;
     }
@@ -165,14 +165,14 @@
     width: fit-content;
     transition: transform 0.2s ease;
 
-    &:hover {
+    @include hover-media {
       transform: translateX(4px);
 
       .contact__text {
         color: $orange;
       }
       .contact__icon img {
-        filter: invert(75%) sepia(0%) saturate(0%) brightness(90%);
+        filter: invert(48%) sepia(90%) saturate(800%) hue-rotate(1deg);
       }
     }
   }
@@ -311,6 +311,14 @@
     }
   }
   @media screen and (max-width: 500px) {
+    &__container {
+      padding: 0;
+    }
+    &__header {
+      margin-top: 15px;
+      margin-bottom: 30px;
+    }
+    padding: 15px;
     &__title-text {
       font-size: 17px;
     }
@@ -363,14 +371,6 @@
     }
   }
   @media screen and (max-width: 400px) {
-    &__container {
-      padding: 0;
-    }
-    &__header {
-      margin-top: 15px;
-      margin-bottom: 30px;
-    }
-    padding: 15px;
     &__card {
       padding: 25px;
       gap: 20px;
