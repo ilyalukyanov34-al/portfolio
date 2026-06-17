@@ -161,25 +161,27 @@ const Contacts = () => {
               )}
             </div>
 
-            <button
-              type="submit"
-              className="contact__btn"
-              disabled={status === "sending"}
-            >
-              {status === "sending" ? t("sending") : t("send_message")}
-              <span className="contact__btn-arrow"> →</span>
-            </button>
+            <div className="contact__btn-row">
+              <button
+                type="submit"
+                className="contact__btn"
+                disabled={status === "sending"}
+              >
+                {status === "sending" ? t("sending") : t("send_message")}
+                <span className="contact__btn-arrow"> →</span>
+              </button>
 
-            {status === "success" && (
-              <p className="contact__status contact__status--success">
-                {t("success")}
-              </p>
-            )}
-            {status === "error" && (
-              <p className="contact__status contact__status--error">
-                {t("error")}
-              </p>
-            )}
+              {status === "success" && (
+                <p className="contact__status contact__status--success">
+                  {t("success")}
+                </p>
+              )}
+              {status === "error" && (
+                <p className="contact__status contact__status--error">
+                  {t("error")}
+                </p>
+              )}
+            </div>
           </form>
 
           <div className="contact__card">

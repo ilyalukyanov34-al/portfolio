@@ -123,6 +123,12 @@
     }
   }
 
+  &__btn-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
   // ПРАВАЯ ЧАСТЬ — КАРТОЧКА
   &__card {
     flex: 1;
