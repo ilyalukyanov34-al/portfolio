@@ -19,6 +19,7 @@
     display: flex;
     align-items: center;
     gap: 10px;
+    @include text-style(18px, 100, $grey);
 
     &-circle {
       width: 20px;
@@ -41,9 +42,8 @@
       }
     }
 
-    &-text {
-      @include text-style(18px, 500, $grey);
-    }
+    // &-text {
+    // }
   }
 
   // &__see-all {

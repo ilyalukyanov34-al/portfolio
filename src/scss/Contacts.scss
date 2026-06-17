@@ -1,0 +1,358 @@
+@use "./Mixin.scss" as *;
+
+.contact {
+  margin-top: 30px;
+  padding: 30px;
+  background: #1e1e1e;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 -15px 30px rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
+
+  &__container {
+    width: 100%;
+    max-width: 1200px; // Увеличили ширину, чтобы влезли обе колонки
+    margin: 0 auto;
+    padding: 0 10px;
+  }
+
+  &__header {
+    margin-bottom: 30px;
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    @include text-style(18px, 100, $grey);
+
+    &-circle {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 2px solid $orange;
+      background: transparent;
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: $orange;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+
+  // Сетка: делит форму и карточку на 2 колонки
+  &__row {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+
+    // На планшетах и телефонах перестраиваем в одну колонку
+    @media (max-width: 868px) {
+      flex-direction: column;
+    }
+  }
+
+  // ЛЕВАЯ ЧАСТЬ — ФОРМА
+  &__form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+
+  &__input-group {
+    width: 100%;
+  }
+
+  &__input,
+  &__textarea {
+    width: 100%;
+    background: #111111; // Цвет как у карточки
+    border: 1px solid #222222;
+    border-radius: 12px;
+    padding: 16px 20px;
+    @include text-style(12px, 500, $grey);
+    outline: none;
+    transition: border-color 0.2s ease;
+
+    &::placeholder {
+      color: #555555; // Серый плейсхолдер из макета
+    }
+
+    &:focus {
+      border-color: $orange;
+    }
+  }
+
+  &__textarea {
+    resize: none; // Запрещаем растягивать текстовое поле вручную
+  }
+
+  // Оранжевая кнопка
+  &__btn {
+    background: none;
+    margin-top: 10px;
+    border: 1px $orange solid;
+    @include text-style(18px, 200, $orange);
+    border-radius: 11px;
+    padding: 12px 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: fit-content;
+    transition:
+      opacity 0.3s ease,
+      transform 0.1s ease;
+
+    &:hover {
+      opacity: 0.9;
+      color: $grey;
+    }
+
+    &:active {
+      transform: scale(0.98);
+    }
+  }
+
+  // ПРАВАЯ ЧАСТЬ — КАРТОЧКА
+  &__card {
+    flex: 1;
+    background: #111111;
+    border: 1px solid #1a1a1a;
+    border-radius: 20px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+    width: 100%;
+  }
+
+  &__main-list,
+  &__social-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__subtitle {
+    font-size: 15px;
+    font-weight: 400;
+    color: $orange;
+    margin-top: 12px;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    text-decoration: none;
+    width: fit-content;
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: translateX(4px);
+
+      .contact__text {
+        color: $orange;
+      }
+      .contact__icon img {
+        filter: invert(48%) sepia(90%) saturate(800%) hue-rotate(1deg);
+      }
+    }
+  }
+
+  &__icon {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    img {
+      filter: invert(1); // делает чёрную иконку белой
+      transition: filter 0.2s ease;
+      color: $grey;
+    }
+  }
+
+  &__text {
+    @include text-style(13px, 500, $grey);
+    transition: color 0.2s ease;
+  }
+  &__status {
+    margin-top: 8px;
+    font-size: 13px;
+
+    &--success {
+      color: #4caf50;
+    }
+
+    &--error {
+      color: #f44336;
+    }
+  }
+
+  @media screen and (max-width: 865px) {
+    &__status {
+      margin-top: 6px;
+      font-size: 12px;
+    }
+    &__title-text {
+      font-size: 20px;
+    }
+  }
+  @media screen and (max-width: 690px) {
+    &__icon {
+      font-size: 20px;
+      width: 17px;
+      height: 17px;
+      img {
+        filter: invert(1); // делает чёрную иконку белой
+        transition: filter 0.2s ease;
+        width: 26px;
+        height: 26px;
+      }
+    }
+  }
+  @media screen and (max-width: 610px) {
+    &__text {
+      @include text-style(12px, 500, $grey);
+    }
+    &__btn {
+      padding: 12px 20px;
+      border-radius: 11px;
+      font-size: 13px;
+      font-weight: 200;
+      color: $orange;
+    }
+    &__icon {
+      font-size: 20px;
+      width: 17px;
+      height: 17px;
+      img {
+        filter: invert(1);
+        transition: filter 0.2s ease;
+        width: 26px;
+        height: 26px;
+      }
+    }
+  }
+  @media screen and (max-width: 580px) {
+    &__text {
+      @include text-style(11px, 500, $grey);
+    }
+    &__btn {
+      font-size: 12px;
+      padding: 10px 14px;
+    }
+    &__title-text {
+      font-size: 18px;
+    }
+    &__subtitle {
+      font-size: 13px;
+      font-weight: 300;
+      color: $orange;
+      margin-top: 8px;
+    }
+    &__icon {
+      font-size: 20px;
+      width: 17px;
+      height: 17px;
+      img {
+        filter: invert(1); // делает чёрную иконку белой
+        transition: filter 0.2s ease;
+        width: 23px;
+        height: 23px;
+      }
+    }
+    &__status {
+      margin-top: 7px;
+      font-size: 11px;
+    }
+  }
+  @media screen and (max-width: 550px) {
+    &__text {
+      @include text-style(10px, 500, $grey);
+    }
+    &__btn {
+      font-size: 12px;
+      padding: 10px 14px;
+    }
+    &__title-text {
+      font-size: 18px;
+    }
+    &__icon {
+      font-size: 20px;
+      width: 17px;
+      height: 17px;
+      img {
+        filter: invert(1); // делает чёрную иконку белой
+        transition: filter 0.2s ease;
+        width: 22px;
+        height: 22px;
+      }
+    }
+  }
+  @media screen and (max-width: 500px) {
+    &__title-text {
+      font-size: 17px;
+    }
+    &__text {
+      @include text-style(11px, 500, $grey);
+    }
+    &__btn {
+      font-size: 10px;
+      padding: 10px 13px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    &__btn {
+      font-size: 10px;
+      padding: 9px 12px;
+    }
+    &__icon {
+      font-size: 20px;
+      width: 17px;
+      height: 17px;
+      img {
+        filter: invert(1); // делает чёрную иконку белой
+        transition: filter 0.2s ease;
+        width: 20px;
+        height: 20px;
+      }
+    }
+    &__row {
+      gap: 20px;
+    }
+    &__form {
+      gap: 8px;
+    }
+  }
+  @media screen and (max-width: 460px) {
+    &__icon {
+      font-size: 20px;
+      width: 17px;
+      height: 17px;
+      img {
+        filter: invert(1); // делает чёрную иконку белой
+        transition: filter 0.2s ease;
+        width: 21px;
+        height: 21px;
+      }
+    }
+    &__card{
+      padding: 30px;
+      gap: 20px;
+    }
+  }
+}
