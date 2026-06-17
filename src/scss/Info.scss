@@ -50,11 +50,13 @@
   &__projects-btn {
     @include text-style(18px, 200, $orange);
     display: inline-block;
+    appearance: none;
+    background: none;
     margin-top: 10px;
     border: 1px solid $orange;
     padding: 12px 20px;
     border-radius: 11px;
-    transition: 0.3s;
+    transition: 0.5s;
     cursor: pointer;
     @include hover-media {
       color: $grey;

@@ -13,9 +13,16 @@ const Info = () => {
       </div>
       <p className="info__paragraph">{t("about__paragraph")}</p>
       <div className="info__projects">
-        <a href="#info" className="info__projects-btn">
+        <button
+          className="info__projects-btn"
+          onClick={() =>
+            document
+              .getElementById("projects")
+              .scrollIntoView({ behavior: "smooth" })
+          }
+        >
           {t("lookProjects")}
-        </a>
+        </button>
       </div>
     </div>
   );

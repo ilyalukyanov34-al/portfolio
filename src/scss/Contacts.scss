@@ -80,7 +80,7 @@
     padding: 16px 20px;
     @include text-style(12px, 500, $grey);
     outline: none;
-    transition: border-color 0.2s ease;
+    transition: border-color 0.5s ease;
 
     &::placeholder {
       color: #555555; // Серый плейсхолдер из макета
@@ -110,7 +110,7 @@
     gap: 8px;
     width: fit-content;
     transition:
-      opacity 0.3s ease,
+      opacity 0.5s ease,
       transform 0.1s ease;
 
     @include hover-media {
