@@ -3,13 +3,13 @@
 .skills {
   display: flex;
   flex-direction: column;
-  background: #1e1e1e;
+  background: var(--bg-card);
   border-radius: 12px;
   padding: 30px;
   margin-top: 20px;
   position: relative;
   z-index: 2;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid var(--border);
   box-shadow: 0 -15px 30px rgba(0, 0, 0, 0.5);
 
   &__title {
@@ -17,13 +17,13 @@
     align-items: center;
     gap: 10px;
     margin-bottom: 8px;
-    @include text-style(18px, 100, $grey);
+    @include text-style(18px, 100, var(--text));
 
     &-circle {
       width: 20px;
       height: 20px;
       border-radius: 50%;
-      border: 2px solid $orange;
+      border: 2px solid $accent;
       background: transparent;
       position: relative;
 
@@ -33,7 +33,7 @@
         width: 10px;
         height: 10px;
         border-radius: 50%;
-        background: $orange;
+        background: $accent;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
@@ -52,10 +52,10 @@
     display: flex;
     align-items: center;
     gap: 15px;
-    background: #2a2a2a;
+    background:  var(--bg-card-inner);
     border-radius: 10px;
     padding: 15px 20px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--border);
     transition: transform 0.3s;
     cursor: pointer;
     @include hover-media {
@@ -68,7 +68,7 @@
     object-fit: contain;
   }
   &__card-name {
-    @include text-style(16px, 500, $white);
+    @include text-style(16px, 500, var(--white));
   }
 
   @media screen and (max-width: 880px) {

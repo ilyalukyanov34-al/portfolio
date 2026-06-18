@@ -9,22 +9,22 @@
   justify-content: space-between;
   align-items: center;
   padding: 14px 30px;
-  background: #1e1e1e;
+  background: var(--bg-card);
   border-radius: 12px;
 
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid var(--border);
   box-shadow:
     0 8px 32px rgba(0, 0, 0, 0.5),
     0 2px 8px rgba(255, 255, 255, 0.02);
 
   &__logo {
-    @include text-style(28px, 700, $orange);
+    @include text-style(28px, 700, $accent);
     font-family: sans-serif;
     flex: 1;
   }
   &__text {
     font-size: 14px;
-    color: $grey;
+    color: var(--text);
   }
 
   @media screen and (max-width: 768px) {

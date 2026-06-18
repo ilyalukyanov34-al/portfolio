@@ -3,8 +3,8 @@
 .projects {
   margin-top: 30px;
   padding: 30px;
-  background: #1e1e1e;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
   box-shadow: 0 -15px 30px rgba(0, 0, 0, 0.5);
   border-radius: 12px;
 
@@ -19,13 +19,13 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    @include text-style(18px, 100, $grey);
+    @include text-style(18px, 100, var(--text));
 
     &-circle {
       width: 20px;
       height: 20px;
       border-radius: 50%;
-      border: 2px solid $orange;
+      border: 2px solid $accent;
       background: transparent;
       position: relative;
 
@@ -35,7 +35,7 @@
         width: 10px;
         height: 10px;
         border-radius: 50%;
-        background: $orange;
+        background: $accent;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
@@ -47,7 +47,7 @@
     background: none; // Сбрасываем фон кнопки
     border: none; // Сбрасываем рамку
     cursor: pointer; // Возвращаем указатель мыши
-    @include text-style(14px, 400, $orange);
+    @include text-style(14px, 400, $accent);
     text-decoration: none;
     transition: 0.5s;
     &:hover {
@@ -70,19 +70,19 @@
     border: none;
     cursor: pointer;
 
-    @include text-style(14px, 400, $white);
+    @include text-style(14px, 400, var(--white));
 
     transition:
       color 0.5s ease-in-out,
       transform 0.1s ease-in-out;
 
     &:hover:not(:disabled) {
-      color: $orange;
+      color: $accent;
       transform: scale(0.95);
     }
 
     &:active:not(:disabled) {
-      color: $orange;
+      color: $accent;
       opacity: 1;
       transform: scale(0.95); // Эффект физического клика
     }
@@ -90,7 +90,7 @@
     &:disabled {
       opacity: 0.3;
       cursor: not-allowed;
-      color: $grey;
+      color: var(--text);
     }
   }
 
@@ -102,14 +102,14 @@
   }
 
   &__card {
-    background: #2a2a2a;
+    background: var(--bg-card-inner);
     border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--border);
     overflow: hidden;
     transition: 0.5s;
 
     &:hover {
-      border-color: $orange;
+      border-color: $accent;
       transform: translateY(-4px);
     }
 
@@ -131,18 +131,18 @@
     }
 
     &-title {
-      @include text-style(16px, 600, $white);
+      @include text-style(16px, 600, var(--white));
       padding: 12px 16px 4px;
     }
 
     &-stack {
-      @include text-style(13px, 400, $grey);
+      @include text-style(13px, 400, var(--text));
       padding: 0 16px 12px;
     }
 
     &-github {
       display: inline-block;
-      @include text-style(13px, 400, $orange);
+      @include text-style(13px, 400, $accent);
       padding: 0 16px 16px;
       text-decoration: none;
       transition: 0.5s;
@@ -151,7 +151,7 @@
       }
     }
     &-live {
-      @include text-style(13px, 400, $grey);
+      @include text-style(13px, 400,var(--text));
       text-decoration: none;
       transition: 0.5s;
       &:hover {

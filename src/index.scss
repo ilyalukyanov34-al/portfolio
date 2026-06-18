@@ -11,9 +11,37 @@
 }
 
 body {
-  background: #1a1a1a;
+  background: var(--bg);
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+:root {
+  --bg: #1a1a1a;
+  --bg-card: #1e1e1e;
+  --bg-input: #111111;
+  --text: #b3b3b3;
+  --white: #ffffff;
+  --border: rgba(255, 255, 255, 0.12);
+  --accent: #ff7a00;
+  --glow: rgba(255, 122, 0, 0.6);
+  --glow-outer: rgba(255, 122, 0, 0.3);
+  --bg-card-inner: #2a2a2a;
+  --bg-contact-card: #111111;
+}
+
+[data-theme="light"] {
+  --bg: #f5f5f5;
+  --bg-card: #e8e8e8;
+  --bg-input: #dcdcdc;
+  --text: #333333;
+  --white: #1a1a1a;
+  --border: rgba(0, 0, 0, 0.1);
+  --accent: #0047ab;
+  --glow: rgba(0, 71, 171, 0.6);
+  --glow-outer: rgba(0, 71, 171, 0.3);
+  --bg-card-inner: #dcdcdc;
+  --bg-contact-card: #e0e0e0;
 }

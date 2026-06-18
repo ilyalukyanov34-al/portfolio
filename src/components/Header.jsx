@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import "../scss/Header.scss";
 import sun from "../assets/sun.svg";
+import moon from "../assets/moon.svg";
 import { useTranslation } from "react-i18next";
 
-const Header = () => {
+const Header = ({ toggleTheme, theme }) => {
   const { t, i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [language, setLanguage] = useState("ru");
@@ -65,10 +66,10 @@ const Header = () => {
         >
           {language === "ru" ? "EN" : "RU"}{" "}
         </button>
-        <button className="header__change-background">
+        <button className="header__change-background" onClick={toggleTheme}>
           <img
-            src={sun}
-            alt="Смена темы"
+            src={theme === "dark" ? sun : moon}
+            alt="Change theme"
             className="header__change-background__img"
           />
         </button>

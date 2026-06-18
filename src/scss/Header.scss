@@ -9,16 +9,16 @@
   justify-content: space-between;
   align-items: center;
   padding: 23px 30px;
-  background: #1e1e1e;
+  background: var(--bg-card);
   border-radius: 12px;
 
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid var(--border);
   box-shadow:
     0 8px 32px rgba(0, 0, 0, 0.5),
     0 2px 8px rgba(255, 255, 255, 0.02);
 
   &__link-logo {
-    @include text-style(28px, 700, $orange);
+    @include text-style(28px, 700,$accent);
     font-family: sans-serif;
     flex: 1;
   }
@@ -29,12 +29,12 @@
   }
 
   &__link {
-    @include text-style(16px, 500, $grey);
+    @include text-style(16px, 500, var(--text));
     text-decoration: none;
     transition: 0.3s;
 
     @include hover-media {
-      color: $orange;
+      color: $accent;
     }
   }
 
@@ -47,16 +47,16 @@
   }
 
   &__lang-btn {
-    @include text-style(16px, 500, $grey);
+    @include text-style(16px, 500, var(--text));
     background: none;
     border: none;
-    color: $grey;
+    color: var(--text);
     padding: 5px 5px;
     cursor: pointer;
     transition: 0.5s;
 
     @include hover-media {
-      color: $orange;
+      color: $accent;
     }
   }
 
@@ -97,7 +97,7 @@
     display: block;
     width: 22px;
     height: 2px;
-    background: $grey;
+    background: var(--text);
     border-radius: 2px;
     transition: 0.5s;
   }
@@ -163,9 +163,9 @@
     align-items: center;
     justify-content: center;
     gap: 12px;
-    background: #1e1e1e;
+    background: var(--bg-card);;
     border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    border: 1px solid var(--border);;
     z-index: 100;
 
     // Плавное открытие через max-height
@@ -278,5 +278,16 @@
   }
   .header__actions {
     gap: 4px;
+  }
+}
+
+[data-theme="light"] {
+  .header__change-background__img {
+    filter: invert(0%);
+  }
+
+  .header__change-background:hover .header__change-background__img,
+  .header__change-background:active .header__change-background__img {
+    filter: invert(20%) sepia(100%) saturate(500%) hue-rotate(200deg);
   }
 }

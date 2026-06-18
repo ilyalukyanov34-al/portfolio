@@ -6,8 +6,8 @@
   align-items: start;
   margin-top: 30px;
   padding: 30px;
-  background: #1e1e1e;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
   box-shadow: 0 -15px 30px rgba(0, 0, 0, 0.5);
   border-radius: 12px;
 
@@ -16,13 +16,13 @@
     align-items: center;
     gap: 10px;
     margin-bottom: 8px;
-    @include text-style(18px, 100, $grey);
+    @include text-style(18px, 100,var(--text));
 
     &-circle {
       width: 20px;
       height: 20px;
       border-radius: 50%;
-      border: 2px solid $orange;
+      border: 2px solid $accent;
       background: transparent;
       position: relative;
 
@@ -32,7 +32,7 @@
         width: 10px;
         height: 10px;
         border-radius: 50%;
-        background: $orange;
+        background: $accent;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
@@ -44,22 +44,22 @@
     display: flex;
     margin-top: 20px;
     margin-bottom: 20px;
-    @include text-style(15px, 100, $white);
+    @include text-style(15px, 300, var(--text));
   }
 
   &__projects-btn {
-    @include text-style(18px, 200, $orange);
+    @include text-style(18px, 300, $accent);
     display: inline-block;
     appearance: none;
     background: none;
     margin-top: 10px;
-    border: 1px solid $orange;
+    border: 1px solid $accent;
     padding: 12px 20px;
     border-radius: 11px;
     transition: 0.5s;
     cursor: pointer;
     @include hover-media {
-      color: $grey;
+      color: var(--text);
     }
   }
 
@@ -68,7 +68,7 @@
       font-size: 20px;
     }
     &__paragraph {
-      @include text-style(14px, 100, $white);
+      @include text-style(14px, 300, var(--white));
       margin-top: 15px;
       margin-bottom: 15px;
     }
@@ -84,7 +84,7 @@
       padding: 10px 14px;
     }
     &__paragraph {
-      @include text-style(14px, 100, $white);
+      @include text-style(14px, 300, var(--white));
       margin-top: 15px;
       margin-bottom: 15px;
     }
@@ -100,7 +100,7 @@
       padding: 10px 13px;
     }
     &__paragraph {
-      @include text-style(13px, 100, $white);
+      @include text-style(13px, 300,var(--white));
       margin-top: 12px;
       margin-bottom: 12px;
     }
