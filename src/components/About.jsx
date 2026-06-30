@@ -16,7 +16,7 @@ const About = () => {
         <h2 className="about__left-name">ILYA</h2>
         <p className="about__left-work">{t("about_desc")}</p>
         <div className="about__left-actions">
-          <a href="#about" className="about__left-btn">
+          <a href="#contact" className="about__left-btn">
             {t("contact_me")}
           </a>
           <div className="about__left-contacts">
