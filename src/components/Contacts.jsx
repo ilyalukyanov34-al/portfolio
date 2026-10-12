@@ -32,13 +32,13 @@ const socialLinks = [
   {
     id: 2,
     name: "Telegram",
-    link: "https://t.me/developer_Lukyanov",
+    link: "https://t.me/I_Lukyanov",
     icon: telegram,
   },
   {
     id: 3,
     name: "Instagram",
-    link: "https://www.instagram.com/developer__lukyanov",
+    link: "https://www.instagram.com/_rep_tile_",
     icon: insta,
   },
 ];
